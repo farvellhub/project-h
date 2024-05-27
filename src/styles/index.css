@@ -2,9 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+@import "./animations.css";
+
+:root {
     margin: 0;
     padding: 0;
     box-sizing: content-box;
-    background-color: beige;
 }
+
+body { background-color: #eee; }
+
+
