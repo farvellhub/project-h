@@ -1,8 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
-
-import { Motion } from "./types"
-import { Loader } from "./components";
 import useLoaded from "./hooks/useLoaded";
+import { Motion } from "./types";
+
+import { 
+  Loader,
+  Render
+} from "./components";
 
 const mainContent = `
   w-[100vw]
@@ -13,25 +16,20 @@ const mainContent = `
   items-center
 `;
 
-const hello = `
-  text-gray-800/90
-  text-3xl
-`;
-
 function App({ isVisible }: Motion) {
   const loaded: boolean = useLoaded();
 
   return (
     loaded ? (
       <AnimatePresence>
-        {isVisible && (
-        <motion.section
-          className={ mainContent }
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          <h1 className={ hello }>Hello World</h1>
-        </motion.section>
+        { isVisible && (
+          <motion.section
+            className={ mainContent }
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <Render />
+          </motion.section>
         )}
       </AnimatePresence>
     ) : (

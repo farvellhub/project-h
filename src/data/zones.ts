@@ -1,0 +1,18 @@
+import Zone from "../types/zone";
+
+const Zones: Zone[] = [
+    {
+        id: 0,
+        name: "Palma de Mallorca"
+    },
+    {
+        id: 1,
+        name: "Calvia"
+    },
+    {
+        id: 2,
+        name: "Alcudia"
+    }
+];
+
+export default Zones;
