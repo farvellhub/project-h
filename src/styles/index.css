@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./animations.css";
-
 :root {
     margin: 0;
     padding: 0;
