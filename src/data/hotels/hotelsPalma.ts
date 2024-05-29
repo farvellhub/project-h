@@ -1,4 +1,4 @@
-import Hotel from "../../types/hotel";
+import type Hotel from "../../types/hotel";
 import Zones from "../zones";
 
 const hotelsPalma: Hotel[] = [

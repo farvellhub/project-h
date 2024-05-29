@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import useLoaded from "./hooks/useLoaded";
-import { Motion } from "./types";
+import { type Motion } from "./types";
 
 import { 
   Loader,

@@ -1,12 +1,22 @@
-const hello = `
-  text-gray-800/90
-  text-3xl
-`;
+import { useState } from "react";
+
+import HotelsRender from "./HotelsRender";
+import ZonesRender from "./ZonesRender";
+
+import {
+    Palma,
+    ZoneCodes 
+} from "../data";
+
 
 function Render() {
+    const [ hotels ] = useState( Palma );
+    const [ zones ] = useState( ZoneCodes );
+
     return (
         <>
-            <h1 className={ hello }>Hello World</h1>
+            <ZonesRender zones={ zones } />
+            <HotelsRender hotels={ hotels } />
         </>
     );
 }

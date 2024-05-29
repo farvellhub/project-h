@@ -1,5 +1,5 @@
-import Zone from "./zone";
-import Season from "./season";
+import type Zone from "./zone";
+import type Season from "./season";
 
 declare interface Hotel {
     zone: Zone,
