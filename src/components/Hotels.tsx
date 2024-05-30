@@ -18,7 +18,7 @@ const Hotels: React.FC<Props> = ( props ) => {
         <ul className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {
             props.hotels.map(( hotel, index ) => (
-                <li className="max-w-sm min-w-[263px] sm:min-w-0 mx-auto sm:mx-0 rounded-lg shadow" key={ index }>
+                <li className="max-w-sm min-w-[263px] sm:min-w-0 mx-auto sm:mx-0 bg-gray-100 rounded-lg shadow" key={ index }>
                     {
                         hotel.cover
                             ?   <img  
