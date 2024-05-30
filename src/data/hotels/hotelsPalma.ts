@@ -6,7 +6,6 @@ const hotelsPalma: Hotel[] = [
         zone: Zones[0],
         name: "Hotel 1 Palma de Mallorca",
         email: "palma1@hotel.com",
-        cover: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.domestika.org%2Fes%2Fschools%2F38830-lasalle-college%2Fstudents&psig=AOvVaw2y5kK5JVpaGlVIK7Z0xkNs&ust=1717039739107000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDz3M_1sYYDFQAAAAAdAAAAABAE",
         seasons: [
             {
                 name: "low-season",
@@ -39,7 +38,6 @@ const hotelsPalma: Hotel[] = [
         zone: Zones[0],
         name: "Hotel 2 Palma de Mallorca",
         email: "palma2@hotel.com",
-        cover: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.domestika.org%2Fes%2Fschools%2F38830-lasalle-college%2Fstudents&psig=AOvVaw2y5kK5JVpaGlVIK7Z0xkNs&ust=1717039739107000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDz3M_1sYYDFQAAAAAdAAAAABAE",
         seasons: [
             {
                 name: "low-season",
@@ -71,7 +69,6 @@ const hotelsPalma: Hotel[] = [
         zone: Zones[0],
         name: "Hotel 3 Palma de Mallorca",
         email: "palma3@hotel.com",
-        cover: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.domestika.org%2Fes%2Fschools%2F38830-lasalle-college%2Fstudents&psig=AOvVaw2y5kK5JVpaGlVIK7Z0xkNs&ust=1717039739107000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDz3M_1sYYDFQAAAAAdAAAAABAE",
         seasons: [
             {
                 name: "low-season",
@@ -90,6 +87,70 @@ const hotelsPalma: Hotel[] = [
                 dateFrom: new Date( Date.now() ),
                 dateAt: new Date( Date.now() ),
                 price: 155
+            }
+        ],
+        stars: 5,
+        suite: true,
+        plusSuite: 60,
+        spa: true,
+        pool: true,
+        adapted: true,
+        allInclusive: true,
+    },
+    {
+        zone: Zones[0],
+        name: "Hotel 4 Palma de Mallorca",
+        email: "palma2@hotel.com",
+        seasons: [
+            {
+                name: "low-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 80
+            },
+            {
+                name: "mid-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 95
+            },
+            {
+                name: "high-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 120
+            }
+        ],
+        stars: 3,
+        suite: true,
+        plusSuite: 60,
+        spa: false,
+        pool: true,
+        adapted: true,
+        allInclusive: false,
+    },
+    {
+        zone: Zones[0],
+        name: "Hotel 5 Palma de Mallorca",
+        email: "palma3@hotel.com",
+        seasons: [
+            {
+                name: "low-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 150
+            },
+            {
+                name: "mid-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 170
+            },
+            {
+                name: "high-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 180
             }
         ],
         stars: 5,

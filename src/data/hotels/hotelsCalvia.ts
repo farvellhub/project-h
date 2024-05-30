@@ -6,7 +6,6 @@ const hotelsCalvia: Hotel[] = [
         zone: Zones[1],
         name: "Hotel 1 Calvia",
         email: "calvia1@hotel.com",
-        cover: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.domestika.org%2Fes%2Fschools%2F38830-lasalle-college%2Fstudents&psig=AOvVaw2y5kK5JVpaGlVIK7Z0xkNs&ust=1717039739107000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDz3M_1sYYDFQAAAAAdAAAAABAE",
         seasons: [
             {
                 name: "low-season",
@@ -39,7 +38,6 @@ const hotelsCalvia: Hotel[] = [
         zone: Zones[1],
         name: "Hotel 2 Calvia",
         email: "calvia2@hotel.com",
-        cover: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.domestika.org%2Fes%2Fschools%2F38830-lasalle-college%2Fstudents&psig=AOvVaw2y5kK5JVpaGlVIK7Z0xkNs&ust=1717039739107000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDz3M_1sYYDFQAAAAAdAAAAABAE",
         seasons: [
             {
                 name: "low-season",

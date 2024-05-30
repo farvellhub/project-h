@@ -4,17 +4,9 @@ import { type Motion } from "./types";
 
 import { 
   Loader,
-  Render
+  Render,
+  Search
 } from "./components";
-
-const mainContent = `
-  w-[100vw]
-  h-[100vh]
-  
-  flex
-  justify-center
-  items-center
-`;
 
 function App({ isVisible }: Motion) {
   const loaded: boolean = useLoaded();
@@ -24,10 +16,10 @@ function App({ isVisible }: Motion) {
       <AnimatePresence>
         { isVisible && (
           <motion.section
-            className={ mainContent }
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
+            <Search />
             <Render />
           </motion.section>
         )}

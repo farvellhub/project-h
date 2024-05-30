@@ -6,7 +6,6 @@ const hotelsAlcudia: Hotel[] = [
         zone: Zones[2],
         name: "Hotel 1 Alcudia",
         email: "alcudia1@hotel.com",
-        cover: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.domestika.org%2Fes%2Fschools%2F38830-lasalle-college%2Fstudents&psig=AOvVaw2y5kK5JVpaGlVIK7Z0xkNs&ust=1717039739107000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDz3M_1sYYDFQAAAAAdAAAAABAE",
         seasons: [
             {
                 name: "low-season",
@@ -39,7 +38,6 @@ const hotelsAlcudia: Hotel[] = [
         zone: Zones[2],
         name: "Hotel 2 Alcudia",
         email: "alcudia2@hotel.com",
-        cover: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.domestika.org%2Fes%2Fschools%2F38830-lasalle-college%2Fstudents&psig=AOvVaw2y5kK5JVpaGlVIK7Z0xkNs&ust=1717039739107000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDz3M_1sYYDFQAAAAAdAAAAABAE",
         seasons: [
             {
                 name: "low-season",
@@ -71,7 +69,6 @@ const hotelsAlcudia: Hotel[] = [
         zone: Zones[2],
         name: "Hotel 3 Alcudia",
         email: "alcudia3@hotel.com",
-        cover: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.domestika.org%2Fes%2Fschools%2F38830-lasalle-college%2Fstudents&psig=AOvVaw2y5kK5JVpaGlVIK7Z0xkNs&ust=1717039739107000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCIDz3M_1sYYDFQAAAAAdAAAAABAE",
         seasons: [
             {
                 name: "low-season",
@@ -96,6 +93,37 @@ const hotelsAlcudia: Hotel[] = [
         suite: true,
         plusSuite: 45,
         spa: true,
+        pool: true,
+        adapted: true,
+        allInclusive: false,
+    },
+    {
+        zone: Zones[2],
+        name: "Hotel 4 Alcudia",
+        email: "alcudia1@hotel.com",
+        seasons: [
+            {
+                name: "low-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 100
+            },
+            {
+                name: "mid-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 110
+            },
+            {
+                name: "high-season",
+                dateFrom: new Date( Date.now() ),
+                dateAt: new Date( Date.now() ),
+                price: 120
+            }
+        ],
+        stars: 4,
+        suite: false,
+        spa: false,
         pool: true,
         adapted: true,
         allInclusive: false,

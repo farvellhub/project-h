@@ -1,23 +1,33 @@
 import { useState } from "react";
+import { type Hotel } from "../types";
 
-import HotelsRender from "./HotelsRender";
-import ZonesRender from "./ZonesRender";
+import Hotels from "./Hotels";
 
-import {
+import { 
     Palma,
-    ZoneCodes 
+    Calvia,
+    Alcudia
 } from "../data";
 
+function scrapZones( ...arrays: Hotel[][] ): Hotel[] {
+    const container: Hotel[] = [];
+    arrays.forEach(( hotelsArray ) => {
+        hotelsArray.forEach(( hotel ) => {
+            container.push( hotel );
+        });
+    });
+    return container;
+}
+
+const zones = scrapZones( Palma, Calvia, Alcudia );
 
 function Render() {
-    const [ hotels ] = useState( Palma );
-    const [ zones ] = useState( ZoneCodes );
+    const [ hotels ] = useState( zones );
 
     return (
-        <>
-            <ZonesRender zones={ zones } />
-            <HotelsRender hotels={ hotels } />
-        </>
+        <div className="p-6 lg:max-w-[1024px] lg:mx-auto">
+            <Hotels hotels={ hotels } />
+        </div>
     );
 }
 

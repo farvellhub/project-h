@@ -5,7 +5,7 @@ declare interface Hotel {
     zone: Zone,
     name: string,
     email: string,
-    cover: string,
+    cover?: string,
     photos?: string[],
     seasons: Season[],
     stars: number,
