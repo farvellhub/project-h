@@ -12,6 +12,9 @@ declare interface Hotel {
     suite: boolean
     plusSuite?: number
     spa: boolean
+    jacuzzi: boolean
+    beach: boolean
+    pets: boolean
     gym: boolean
     pool: boolean
     adapted: boolean

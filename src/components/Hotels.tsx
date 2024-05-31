@@ -71,6 +71,21 @@ const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {
                                     : ""
                             }
                             {
+                                hotel.jacuzzi
+                                    ? <p className="badge"><Utils.Icons.JacuzziIcon />Jacuzzi available</p>
+                                    : ""
+                            }
+                            {
+                                hotel.beach
+                                    ? <p className="badge"><Utils.Icons.BeachIcon />Access to beach</p>
+                                    : ""
+                            }
+                            {
+                                hotel.pets
+                                    ? <p className="badge"><Utils.Icons.PetsIcon />Pets allowed</p>
+                                    : ""
+                            }
+                            {
                                 hotel.adapted
                                     ? <p className="badge"><Utils.Icons.WheelchairIcon />Invalid friendly</p>
                                     : ""
