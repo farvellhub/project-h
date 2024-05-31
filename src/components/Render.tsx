@@ -6,11 +6,7 @@ import {
     Search
 } from "./";
 
-import { 
-    Palma,
-    Calvia,
-    Alcudia
-} from "../data";
+import { hotelsMock } from "../data";
 
 
 const zones = (( ...arrays: Hotel[][] ): Hotel[] => {
@@ -21,9 +17,9 @@ const zones = (( ...arrays: Hotel[][] ): Hotel[] => {
         });
     });
     return container;
-})( Palma, Calvia, Alcudia );
+})( hotelsMock );
 
-const container = "px-6 lg:max-w-[1024px] lg:mx-auto";
+const container = "px-6 lg:max-w-[1124px] lg:mx-auto";
 
 
 function Render(): JSX.Element {

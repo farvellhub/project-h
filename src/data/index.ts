@@ -1,15 +1,8 @@
-import Zones from "./zones";
-
-import {
-    hotelsPalma,
-    hotelsCalvia,
-    hotelsAlcudia
-} from "./hotels";
+import hotels from "./hotels";
+import zones from "./zones";
 
 export {
-    Zones as ZoneCodes,
-    hotelsPalma as Palma,
-    hotelsCalvia as Calvia,
-    hotelsAlcudia as Alcudia
+    hotels as hotelsMock,
+    zones as zoneCodes
 };
 

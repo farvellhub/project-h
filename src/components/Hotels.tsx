@@ -16,7 +16,7 @@ const itemStars = "flex py-0.5";
 const itemBadges = "flex flex-col";
 
 
-const Hotels: React.FC<Props> = ({ hotels }) => {
+const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {
     const eid = nanoid( 5 );
 
     const setStars = ({ name, stars }: Hotel): string[] => {

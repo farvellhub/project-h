@@ -7,7 +7,7 @@ import {
   Render
 } from "./components";
 
-function App({ isVisible }: Motion) {
+function App({ isVisible }: Motion): JSX.Element {
   const loaded: boolean = useLoaded();
 
   return (

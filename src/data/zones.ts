@@ -1,6 +1,6 @@
 import type Zone from "../types/zone";
 
-const Zones: Zone[] = [
+const zones: Zone[] = [
     {
         id: 0,
         name: "Palma de Mallorca"
@@ -15,4 +15,4 @@ const Zones: Zone[] = [
     }
 ];
 
-export default Zones;
+export default zones;
