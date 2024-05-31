@@ -1,29 +1,16 @@
 import { useEffect, useState } from "react";
-import { type Hotel } from "../types";
+import { hotelsMock } from "../data";
 
 import {
     Hotels,
     Search
 } from "./";
 
-import { hotelsMock } from "../data";
-
-
-const zones = (( ...arrays: Hotel[][] ): Hotel[] => {
-    const container: Hotel[] = [];
-    arrays.forEach(( hotelsArray ) => {
-        hotelsArray.forEach(( hotel ) => {
-            container.push( hotel );
-        });
-    });
-    return container;
-})( hotelsMock );
-
 const container = "px-6 lg:max-w-[1124px] lg:mx-auto";
 
 
 function Render(): JSX.Element {
-    const [ hotels, setHotels ] = useState( zones );
+    const [ hotels, setHotels ] = useState( hotelsMock );
     const [ search, setSearch ] = useState("");
 
     const handleSearch = ( e: React.FormEvent<HTMLInputElement> ) => {
