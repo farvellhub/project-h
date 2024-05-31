@@ -51,32 +51,32 @@ const Hotels: React.FC<Props> = ({ hotels }) => {
                         <div className="">
                             {
                                 hotel.suite 
-                                    ? <p className="badge"><Utils.BedIcon />{ "Suite plus: " + hotel.plusSuite + "€"}</p>
+                                    ? <p className="badge"><Utils.Icons.BedIcon />{ "Suite plus: " + hotel.plusSuite + "€"}</p>
                                     : ""
                             }
                             {
                                 hotel.spa
-                                    ? <p className="badge"><Utils.SpaIcon />Spa available</p>
+                                    ? <p className="badge"><Utils.Icons.SpaIcon />Spa available</p>
                                     : ""
                             }
                             {
                                 hotel.gym
-                                    ? <p className="badge"><Utils.GymIcon />Gym available</p>
+                                    ? <p className="badge"><Utils.Icons.GymIcon />Gym available</p>
                                     : ""
                             }
                             {
                                 hotel.pool
-                                    ? <p className="badge"><Utils.SwimmingIcon />Pool available</p>
+                                    ? <p className="badge"><Utils.Icons.SwimmingIcon />Pool available</p>
                                     : ""
                             }
                             {
                                 hotel.adapted
-                                    ? <p className="badge"><Utils.WheelchairIcon />Invalid friendly</p>
+                                    ? <p className="badge"><Utils.Icons.WheelchairIcon />Invalid friendly</p>
                                     : ""
                             }
                             {
                                 hotel.allInclusive
-                                    ? <p className="badge"><Utils.GlassIcon />All inclusive</p>
+                                    ? <p className="badge"><Utils.Icons.GlassIcon />All inclusive</p>
                                     : ""
                             }
                         </div>
