@@ -12,7 +12,8 @@ const itemContainer = "w-full min-w-[263px] sm:min-w-0 mx-auto sm:mx-0 bg-gray-1
 const wrapper = "p-4";
 const itemTitle = "mb-2 text-2xl font-bold tracking-tight text-gray-800/90";
 const itemZone = "text-xs py-0.5";
-const itemBadges = "flex py-0.5";
+const itemStars = "flex py-0.5";
+const itemBadges = "flex flex-col";
 
 
 const Hotels: React.FC<Props> = ({ hotels }) => {
@@ -43,12 +44,12 @@ const Hotels: React.FC<Props> = ({ hotels }) => {
                     <section className={ wrapper }>
                         <h2 className={ itemTitle }>{ hotel.name }</h2>
                         <p className={ itemZone }>{ hotel.zone.name }</p>
-                        <div className={ itemBadges }>
+                        <div className={ itemStars }>
                             {
                                 setStars( hotel ).map(( key ) => <span key={ key }><Utils.Star /></span>)
                             }
                         </div>
-                        <div className="">
+                        <div className={ itemBadges }>
                             {
                                 hotel.suite 
                                     ? <p className="badge"><Utils.Icons.BedIcon />{ "Suite plus: " + hotel.plusSuite + "€"}</p>
