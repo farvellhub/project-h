@@ -1,7 +1,7 @@
 declare interface Season {
-    name: string,
-    dateFrom: Date,
-    dateAt: Date,
+    name: string
+    dateFrom: Date
+    dateAt: Date
     price: number
 }
 

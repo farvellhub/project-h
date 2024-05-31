@@ -1,5 +1,5 @@
 declare interface Zone {
-    id: number,
+    id: number
     name: string
 }
 
