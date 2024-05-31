@@ -1,20 +1,18 @@
 import { nanoid } from "nanoid";
 import { type Hotel } from "../types";
 
-import {
-    BedIcon,
-    Cover,
-    GlassIcon,
-    GymIcon,
-    Star,
-    SpaIcon,
-    SwimmingIcon,
-    WheelchairIcon
-} from "./utils";
+import * as Utils from "./utils";
 
 declare interface Props {
     hotels: Hotel[]
 }
+
+const listContainer = "mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4";
+const itemContainer = "w-full min-w-[263px] sm:min-w-0 mx-auto sm:mx-0 bg-gray-100 rounded-lg shadow";
+const wrapper = "p-4";
+const itemTitle = "mb-2 text-2xl font-bold tracking-tight text-gray-800/90";
+const itemZone = "text-xs py-0.5";
+const itemBadges = "flex py-0.5";
 
 
 const Hotels: React.FC<Props> = ({ hotels }) => {
@@ -28,57 +26,57 @@ const Hotels: React.FC<Props> = ({ hotels }) => {
     }
 
     return (
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <ul className={ listContainer }>
         {
             hotels.map(( hotel, index ) => (
-                <li className="w-full min-w-[263px] sm:min-w-0 mx-auto sm:mx-0 bg-gray-100 rounded-lg shadow" key={ hotel.name + eid + index }>
+                <li className={ itemContainer } key={ hotel.name + eid + index }>
                     {
                         hotel.cover
                             ?   <img  
-                                    className="rounded-t-lg"
+                                    className="cover"
                                     src={ hotel.cover }
                                     alt={ "hotel" + index }
                                 />
 
-                            : <Cover />
+                            : <Utils.Cover />
                     }
-                    <section className="p-4">
-                        <h2 className="mb-2 text-2xl font-bold tracking-tight text-gray-800/90">{ hotel.name }</h2>
-                        <p className="text-xs py-0.5">{ hotel.zone.name }</p>
-                        <div className="flex py-0.5">
+                    <section className={ wrapper }>
+                        <h2 className={ itemTitle }>{ hotel.name }</h2>
+                        <p className={ itemZone }>{ hotel.zone.name }</p>
+                        <div className={ itemBadges }>
                             {
-                                setStars( hotel ).map(( key ) => <span key={ key }><Star /></span>)
+                                setStars( hotel ).map(( key ) => <span key={ key }><Utils.Star /></span>)
                             }
                         </div>
                         <div className="">
                             {
                                 hotel.suite 
-                                    ? <p className="badge"><BedIcon />{ "Suite plus: " + hotel.plusSuite + "€"}</p>
+                                    ? <p className="badge"><Utils.BedIcon />{ "Suite plus: " + hotel.plusSuite + "€"}</p>
                                     : ""
                             }
                             {
                                 hotel.spa
-                                    ? <p className="badge"><SpaIcon />Spa available</p>
+                                    ? <p className="badge"><Utils.SpaIcon />Spa available</p>
                                     : ""
                             }
                             {
                                 hotel.gym
-                                    ? <p className="badge"><GymIcon />Gym available</p>
+                                    ? <p className="badge"><Utils.GymIcon />Gym available</p>
                                     : ""
                             }
                             {
                                 hotel.pool
-                                    ? <p className="badge"><SwimmingIcon />Pool available</p>
+                                    ? <p className="badge"><Utils.SwimmingIcon />Pool available</p>
                                     : ""
                             }
                             {
                                 hotel.adapted
-                                    ? <p className="badge"><WheelchairIcon />Invalid friendly</p>
+                                    ? <p className="badge"><Utils.WheelchairIcon />Invalid friendly</p>
                                     : ""
                             }
                             {
                                 hotel.allInclusive
-                                    ? <p className="badge"><GlassIcon />All inclusive</p>
+                                    ? <p className="badge"><Utils.GlassIcon />All inclusive</p>
                                     : ""
                             }
                         </div>

@@ -5,3 +5,7 @@
 .icon {
     @apply text-gray-900/90 inline w-[0.75rem] mr-[3px] ml-[-0.55rem];
 }
+
+.cover {
+    @apply rounded-t-lg
+}

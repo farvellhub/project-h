@@ -4,8 +4,7 @@ import { type Motion } from "./types";
 
 import { 
   Loader,
-  Render,
-  Search
+  Render
 } from "./components";
 
 function App({ isVisible }: Motion) {
@@ -19,7 +18,6 @@ function App({ isVisible }: Motion) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <Search />
             <Render />
           </motion.section>
         )}

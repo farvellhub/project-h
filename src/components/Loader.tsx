@@ -1,29 +1,10 @@
 import { motion } from "framer-motion"; 
 
-const container = `
-  w-[100vw]
-  h-[100vh]
+const container = "w-[100vw] h-[100vh] flex justify-center items-center";
+const spinner = "w-[50px] h-[50px] rounded-[50%] border-2 border-solid border-gray-400 border-t-gray-800";
+const spin = "animate-spin ease-in-out";
 
-  flex
-  justify-center
-  items-center
-`;
-
-const spinner = `
-  animate-spin
-  ease-in-out
-
-  w-[50px]
-  h-[50px]
-  rounded-[50%]
-
-  border-2
-  border-solid
-  border-gray-400
-  border-t-gray-800
-`;
-
-function Loader() {
+function Loader(): JSX.Element {
   return (
     <motion.main
       className={ container }
@@ -31,7 +12,7 @@ function Loader() {
       exit={{ opacity: 0 }}
       transition={{ delay: 1 }}
     >
-        <section className={ spinner }></section>
+        <div className={ spinner + spin }></div>
     </motion.main>
   );
 }

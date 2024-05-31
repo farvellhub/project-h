@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { type Hotel } from "../types";
 
-import Hotels from "./Hotels";
+import {
+    Hotels,
+    Search
+} from "./";
 
 import { 
     Palma,
@@ -9,7 +12,8 @@ import {
     Alcudia
 } from "../data";
 
-function scrapZones( ...arrays: Hotel[][] ): Hotel[] {
+
+const zones = (( ...arrays: Hotel[][] ): Hotel[] => {
     const container: Hotel[] = [];
     arrays.forEach(( hotelsArray ) => {
         hotelsArray.forEach(( hotel ) => {
@@ -17,15 +21,27 @@ function scrapZones( ...arrays: Hotel[][] ): Hotel[] {
         });
     });
     return container;
-}
+})( Palma, Calvia, Alcudia );
 
-const zones = scrapZones( Palma, Calvia, Alcudia );
+const container = "px-6 lg:max-w-[1024px] lg:mx-auto";
 
-function Render() {
-    const [ hotels ] = useState( zones );
+
+function Render(): JSX.Element {
+    const [ hotels, setHotels ] = useState( zones );
+    const [ search, setSearch ] = useState("");
+
+    const handleSearch = ( e: React.FormEvent<HTMLInputElement> ) => {
+        console.log( e.currentTarget.value );
+        setSearch( e.currentTarget.value );
+    }
+
+    useEffect(() => {
+        
+    })
 
     return (
-        <div className="p-6 lg:max-w-[1024px] lg:mx-auto">
+        <div className={ container }>
+            <Search handleSearch={ handleSearch } />
             <Hotels hotels={ hotels } />
         </div>
     );
