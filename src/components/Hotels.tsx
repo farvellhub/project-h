@@ -1,7 +1,12 @@
+import { type Icon, type Hotel } from "../types";
 import { nanoid } from "nanoid";
-import { type Hotel } from "../types";
 
-import * as Utils from "./utils";
+import {
+    Cover,
+    Star
+} from "./utils";
+
+import { IconCollection } from "../data";
 
 declare interface Props {
     hotels: Hotel[]
@@ -9,7 +14,7 @@ declare interface Props {
 
 const listContainer = "mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4";
 const itemContainer = "w-full min-w-[263px] sm:min-w-0 mx-auto sm:mx-0 bg-gray-100 rounded-lg shadow";
-const wrapper = "p-4";
+const itemWrapper = "p-4";
 const itemTitle = "mb-2 text-2xl font-bold tracking-tight text-gray-800/90";
 const itemZone = "text-xs py-0.5";
 const itemStars = "flex py-0.5";
@@ -36,21 +41,39 @@ const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {
                             ?   <img  
                                     className="cover"
                                     src={ hotel.cover }
-                                    alt={ "hotel" + index }
+                                    alt={ "hotel " + index }
                                 />
 
-                            : <Utils.Cover />
+                            : <Cover />
                     }
-                    <section className={ wrapper }>
+                    <section className={ itemWrapper }>
                         <h2 className={ itemTitle }>{ hotel.name }</h2>
                         <p className={ itemZone }>{ hotel.zone.name }</p>
                         <div className={ itemStars }>
                             {
-                                setStars( hotel ).map(( key ) => <span key={ key }><Utils.Star /></span>)
+                                setStars( hotel ).map(( key ) => <span key={ key }><Star /></span>)
                             }
                         </div>
                         <div className={ itemBadges }>
                             {
+                                IconCollection.map(({ name, icon, description }: Icon) => {
+                                    if ( !hotel[name] ) return;
+
+                                    return (
+                                        <p className="badge">
+                                            { icon() } 
+                                            { 
+                                                name === "suite" 
+                                                    ? description + hotel.plusSuite + "€"
+                                                    : description
+                                            }
+                                        </p>
+                                    );
+                                })
+                            }
+
+
+                            {/* {
                                 hotel.suite 
                                     ? <p className="badge"><Utils.Icons.BedIcon />{ "Suite plus: " + hotel.plusSuite + "€"}</p>
                                     : ""
@@ -94,7 +117,7 @@ const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {
                                 hotel.allInclusive
                                     ? <p className="badge"><Utils.Icons.GlassIcon />All inclusive</p>
                                     : ""
-                            }
+                            } */}
                         </div>
                     </section>
                 </li>
