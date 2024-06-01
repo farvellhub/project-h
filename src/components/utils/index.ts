@@ -6,5 +6,5 @@ import * as Icons from "./Icons";
 export {
     Cover,
     Icons,
-    Star,
+    Star
 }

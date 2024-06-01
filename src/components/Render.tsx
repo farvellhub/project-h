@@ -6,7 +6,7 @@ import {
     Search
 } from "./";
 
-const container = "px-6 lg:max-w-[1124px] lg:mx-auto";
+const container = "px-6 lg:max-w-[1224px] lg:mx-auto";
 
 
 function Render(): JSX.Element {

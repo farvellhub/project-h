@@ -18,7 +18,7 @@ const itemWrapper = "p-4";
 const itemTitle = "mb-2 text-2xl font-bold tracking-tight text-gray-800/90";
 const itemZone = "text-xs py-0.5";
 const itemStars = "flex py-0.5";
-const itemBadges = "flex flex-col";
+const itemBadges = "grid grid-cols-2";
 
 
 const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {

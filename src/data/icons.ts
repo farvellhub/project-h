@@ -1,11 +1,11 @@
-import * as Icons from "../components/utils/Icons";
+import { Icons } from "../components/utils";
 import { type Icon } from "../types";
 
 const icons: Icon[] = [
     {
         name: "suite",
         icon: Icons.BedIcon,
-        description: "Suite plus: "
+        description: "Suite: "
     },
     {
         name: "pets",
