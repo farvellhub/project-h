@@ -71,53 +71,6 @@ const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {
                                     );
                                 })
                             }
-
-
-                            {/* {
-                                hotel.suite 
-                                    ? <p className="badge"><Utils.Icons.BedIcon />{ "Suite plus: " + hotel.plusSuite + "€"}</p>
-                                    : ""
-                            }
-                            {
-                                hotel.spa
-                                    ? <p className="badge"><Utils.Icons.SpaIcon />Spa available</p>
-                                    : ""
-                            }
-                            {
-                                hotel.gym
-                                    ? <p className="badge"><Utils.Icons.GymIcon />Gym available</p>
-                                    : ""
-                            }
-                            {
-                                hotel.pool
-                                    ? <p className="badge"><Utils.Icons.SwimmingIcon />Pool available</p>
-                                    : ""
-                            }
-                            {
-                                hotel.jacuzzi
-                                    ? <p className="badge"><Utils.Icons.JacuzziIcon />Jacuzzi available</p>
-                                    : ""
-                            }
-                            {
-                                hotel.beach
-                                    ? <p className="badge"><Utils.Icons.BeachIcon />Access to beach</p>
-                                    : ""
-                            }
-                            {
-                                hotel.pets
-                                    ? <p className="badge"><Utils.Icons.PetsIcon />Pets allowed</p>
-                                    : ""
-                            }
-                            {
-                                hotel.adapted
-                                    ? <p className="badge"><Utils.Icons.WheelchairIcon />Invalid friendly</p>
-                                    : ""
-                            }
-                            {
-                                hotel.allInclusive
-                                    ? <p className="badge"><Utils.Icons.GlassIcon />All inclusive</p>
-                                    : ""
-                            } */}
                         </div>
                     </section>
                 </li>
