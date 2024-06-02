@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useLoaded = (): boolean => {
+function useLoaded (): boolean {
     const [ loaded, setLoaded ] = useState( false );
     
     useEffect(() => {
@@ -10,6 +10,6 @@ const useLoaded = (): boolean => {
     }, []);
 
     return loaded;
-};
+}
 
 export default useLoaded;

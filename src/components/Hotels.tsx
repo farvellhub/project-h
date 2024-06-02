@@ -1,15 +1,13 @@
-import { type Icon, type Hotel } from "../types";
+import { AnimatePresence, motion } from "framer-motion";
 import { nanoid } from "nanoid";
 
-import {
-    Cover,
-    Star
-} from "./utils";
-
+import { type Icon, type Hotel } from "../types";
+import { Cover, Star } from "./utils";
 import { IconCollection } from "../data";
 
 declare interface Props {
     hotels: Hotel[]
+    isVisible: boolean
 }
 
 const listContainer = "mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4";
@@ -21,7 +19,7 @@ const itemStars = "flex py-0.5";
 const itemBadges = "grid grid-cols-2";
 
 
-const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {
+const Hotels: React.FC<Props> = ({ isVisible, hotels }): JSX.Element => {
     const eid = nanoid( 5 );
 
     const setStars = ({ name, stars }: Hotel): string[] => {
@@ -32,51 +30,57 @@ const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {
     }
 
     return (
-        <ul className={ listContainer }>
-        {
-            hotels.map(( hotel, index ) => (
-                <li className={ itemContainer } key={ hotel.name + eid + index }>
+        <AnimatePresence>
+            { isVisible && (
+                <motion.ul 
+                    className={ listContainer }
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                >
                     {
-                        hotel.cover
-                            ?   <img  
-                                    className="cover"
-                                    src={ hotel.cover }
-                                    alt={ "hotel " + index }
-                                />
-
-                            : <Cover />
+                        hotels.map(( hotel, index ) => (
+                            <li className={ itemContainer } key={ hotel.name + eid + index }>
+                                {
+                                    hotel.cover
+                                        ?   <img  
+                                                className="cover"
+                                                src={ hotel.cover }
+                                                alt={ "hotel " + index }
+                                            />
+                                        : <Cover />
+                                }
+                                <section className={ itemWrapper }>
+                                    <h2 className={ itemTitle }>{ hotel.name }</h2>
+                                    <p className={ itemZone }>{ hotel.zone.name }</p>
+                                    <div className={ itemStars }>
+                                        { setStars( hotel ).map(( key ) => <span key={ key }><Star /></span>) }
+                                    </div>
+                                    <div className={ itemBadges }>
+                                        {
+                                            IconCollection.map(({ name, icon, description }: Icon, index: number) => {
+                                                if ( !hotel[name] ) return;
+        
+                                                return (
+                                                    <p className="badge" key={ eid + name + index }>
+                                                        { icon() } 
+                                                        { 
+                                                            name === "suite" 
+                                                                ? description + hotel.plusSuite + "€"
+                                                                : description
+                                                        }
+                                                    </p>
+                                                );
+                                            })
+                                        }
+                                    </div>
+                                </section>
+                            </li>
+                        ))
                     }
-                    <section className={ itemWrapper }>
-                        <h2 className={ itemTitle }>{ hotel.name }</h2>
-                        <p className={ itemZone }>{ hotel.zone.name }</p>
-                        <div className={ itemStars }>
-                            {
-                                setStars( hotel ).map(( key ) => <span key={ key }><Star /></span>)
-                            }
-                        </div>
-                        <div className={ itemBadges }>
-                            {
-                                IconCollection.map(({ name, icon, description }: Icon, index: number) => {
-                                    if ( !hotel[name] ) return;
-
-                                    return (
-                                        <p className="badge" key={ eid + name + index }>
-                                            { icon() } 
-                                            { 
-                                                name === "suite" 
-                                                    ? description + hotel.plusSuite + "€"
-                                                    : description
-                                            }
-                                        </p>
-                                    );
-                                })
-                            }
-                        </div>
-                    </section>
-                </li>
-            ))
-        }
-        </ul>
+                </motion.ul>
+            )}
+        </AnimatePresence>
     );
 };
 

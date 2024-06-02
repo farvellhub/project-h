@@ -1,33 +1,48 @@
-import { motion, AnimatePresence } from "framer-motion";
-import useLoaded from "./hooks/useLoaded";
-import { type Motion } from "./types";
+import { motion } from "framer-motion";
 
 import { 
-  Loader,
-  Render
+    useLoaded,
+    useSearch
+ } from "./hooks/index";
+
+import { 
+    Loader, 
+    Hotels, 
+    Search 
 } from "./components";
 
-function App({ isVisible }: Motion): JSX.Element {
-  const loaded: boolean = useLoaded();
+const container = "px-6 lg:max-w-[1224px] lg:mx-auto";
 
-  return (
-    loaded ? (
-      <AnimatePresence>
-        { isVisible && (
-          <motion.section
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-          >
-            <Render />
-          </motion.section>
-        )}
-      </AnimatePresence>
-    ) : (
-      <>
-        <Loader />
-      </>
-    )
-  );
+function App(): JSX.Element {
+    const loaded = useLoaded();
+    const search = useSearch();
+
+    return (
+        loaded ? (
+            <motion.main 
+                className={ container }
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+            >
+                <Search 
+                    handleSubmit={ search.handleSubmit }
+                    handleSearch={ search.handleSearch } 
+                />
+
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                >
+                    <Hotels isVisible hotels={ search.hotels } />
+                </motion.section>
+            </motion.main>
+        ) : (
+            <>
+                <Loader />
+            </>
+        )
+    );
 }
 
 export default App;

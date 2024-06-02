@@ -1,33 +1,31 @@
 import { useState } from "react";
 import { hotelsMock } from "../data";
+import { Hotel } from "../types";
 
-import {
-    Hotels,
-    Search
-} from "./";
+declare interface Search {
+    handleSearch: (e: React.FormEvent<HTMLInputElement>) => void
+    handleSubmit: (e: React.FormEvent<HTMLButtonElement>) => void
+    hotels: Hotel[]
+}
 
-const container = "px-6 lg:max-w-[1224px] lg:mx-auto";
-
-
-function Render(): JSX.Element {
+function useSearch(): Search {
     const [ hotels, setHotels ] = useState( hotelsMock );
-    const [ search, setSearch ] = useState("");
+    const [ search, setSearch ] = useState( "" );
 
     const handleSearch = ( e: React.FormEvent<HTMLInputElement> ) => {
         setSearch( e.currentTarget.value );
-        console.log( search );
     }
 
     const filterHotels = () => {
         if ( search === "" ) return hotelsMock;
 
         return hotelsMock.map(( hotel ) => {
-            if ( 
-                hotel.name.toLowerCase().includes( search.toLowerCase() ) 
+            if (
+                hotel.name.toLowerCase().includes( search.toLowerCase() )
                 || hotel.zone.name.toLowerCase().includes( search.toLowerCase() )
                 || hotel.email.toLowerCase().includes( search.toLowerCase() )
             ) return hotel;
-        }).filter( ( hotel ) => hotel !== undefined );
+        }).filter(( hotel ) => hotel !== undefined);
     }
 
     const handleSubmit = ( e: React.FormEvent<HTMLButtonElement> ) => {
@@ -35,12 +33,11 @@ function Render(): JSX.Element {
         setHotels( filterHotels() );
     }
 
-    return (
-        <div className={ container }>
-            <Search handleSubmit={ handleSubmit } handleSearch={ handleSearch } />
-            <Hotels hotels={ hotels } />
-        </div>
-    );
+    return {
+        handleSearch,
+        handleSubmit,
+        hotels
+    }
 }
 
-export default Render;
+export default useSearch;
