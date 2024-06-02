@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { hotelsMock } from "../data";
 
 import {
@@ -14,17 +14,30 @@ function Render(): JSX.Element {
     const [ search, setSearch ] = useState("");
 
     const handleSearch = ( e: React.FormEvent<HTMLInputElement> ) => {
-        console.log( e.currentTarget.value );
         setSearch( e.currentTarget.value );
+        console.log( search );
     }
 
-    useEffect(() => {
-        
-    })
+    const filterHotels = () => {
+        if ( search === "" ) return hotelsMock;
+
+        return hotelsMock.map(( hotel ) => {
+            if ( 
+                hotel.name.toLowerCase().includes( search.toLowerCase() ) 
+                || hotel.zone.name.toLowerCase().includes( search.toLowerCase() )
+                || hotel.email.toLowerCase().includes( search.toLowerCase() )
+            ) return hotel;
+        }).filter( ( hotel ) => hotel !== undefined );
+    }
+
+    const handleSubmit = ( e: React.FormEvent<HTMLButtonElement> ) => {
+        e.preventDefault();
+        setHotels( filterHotels() );
+    }
 
     return (
         <div className={ container }>
-            <Search handleSearch={ handleSearch } />
+            <Search handleSubmit={ handleSubmit } handleSearch={ handleSearch } />
             <Hotels hotels={ hotels } />
         </div>
     );

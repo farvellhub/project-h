@@ -1,8 +1,13 @@
-import { type ChangeEventHandler } from "react";
 import { nanoid } from "nanoid";
+
+import { 
+    type ChangeEventHandler, 
+    type MouseEventHandler 
+} from "react";
 
 declare interface Props {
     handleSearch: ChangeEventHandler<HTMLInputElement>
+    handleSubmit: MouseEventHandler<HTMLButtonElement>
 }
 
 const formContainer = "max-w-sm sm:max-w-md mx-auto mb-6";
@@ -22,7 +27,7 @@ function SearchIcon(): JSX.Element {
     );
 }
 
-const Search: React.FC<Props> = ({ handleSearch }): JSX.Element => {
+const Search: React.FC<Props> = ({ handleSearch, handleSubmit }): JSX.Element => {
     const uuid: string = nanoid();
 
     return (
@@ -40,7 +45,13 @@ const Search: React.FC<Props> = ({ handleSearch }): JSX.Element => {
                     placeholder="Search hotels..."
                     required 
                 />
-                <button type="submit" className={ searchSubmit }>Search</button>
+                <button 
+                    type="submit" 
+                    className={ searchSubmit }
+                    onClick={ handleSubmit }
+                >
+                    Search
+                </button>
             </div>
         </form>
     );

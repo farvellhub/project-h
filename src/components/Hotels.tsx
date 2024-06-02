@@ -56,11 +56,11 @@ const Hotels: React.FC<Props> = ({ hotels }): JSX.Element => {
                         </div>
                         <div className={ itemBadges }>
                             {
-                                IconCollection.map(({ name, icon, description }: Icon) => {
+                                IconCollection.map(({ name, icon, description }: Icon, index: number) => {
                                     if ( !hotel[name] ) return;
 
                                     return (
-                                        <p className="badge">
+                                        <p className="badge" key={ eid + name + index }>
                                             { icon() } 
                                             { 
                                                 name === "suite" 
