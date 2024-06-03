@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
-import { hotelsMock } from "./data";
+import { hotelsMock } from "#data";
 
 import { 
     useLoaded,
     useSearch
- } from "./hooks/index";
+ } from "#hooks";
 
 import { 
     Loader, 
     Hotels, 
     Search 
-} from "./components";
+} from "#components";
 
 const container = "px-6 lg:max-w-[1224px] lg:mx-auto";
 

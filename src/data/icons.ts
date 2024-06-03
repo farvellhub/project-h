@@ -1,5 +1,5 @@
-import { Icons } from "../components/utils";
-import { type Icon } from "../types";
+import { Icons } from "#utils";
+import { type Icon } from "#types";
 
 const icons: Icon[] = [
     {

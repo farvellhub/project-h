@@ -1,17 +1,18 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { nanoid } from "nanoid";
 
+import { IconCollection } from "#data";
+
 import { 
     type Icon, 
     type Hotel 
-} from "../types";
+} from "#types";
 
 import { 
     Cover, 
     Star 
-} from "./utils";
+} from "#utils";
 
-import { IconCollection } from "../data";
 
 declare interface Props {
     hotels: Hotel[]

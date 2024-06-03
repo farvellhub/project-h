@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Hotel } from "../types";
+import { Hotel } from "#types";
 
 declare interface Search {
     handleSearch: (e: React.FormEvent<HTMLInputElement>) => void

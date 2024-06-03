@@ -1,9 +1,9 @@
-import type Hotel from "../types/hotel";
-import zones from "./zones";
+import { type Hotel } from "#types";
+import { zoneCodes } from "#data";
 
 const hotels: Hotel[] = [
     {
-        zone: zones[2],
+        zone: zoneCodes[2],
         name: "Hotel 1 Alcudia",
         email: "alcudia1@hotel.com",
         seasons: [
@@ -39,7 +39,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
-        zone: zones[2],
+        zone: zoneCodes[2],
         name: "Hotel 2 Alcudia",
         email: "alcudia2@hotel.com",
         seasons: [
@@ -74,7 +74,7 @@ const hotels: Hotel[] = [
         allInclusive: true,
     },
     {
-        zone: zones[2],
+        zone: zoneCodes[2],
         name: "Hotel 3 Alcudia",
         email: "alcudia3@hotel.com",
         seasons: [
@@ -110,7 +110,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
-        zone: zones[2],
+        zone: zoneCodes[2],
         name: "Hotel 4 Alcudia",
         email: "alcudia1@hotel.com",
         seasons: [
@@ -145,7 +145,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
-        zone: zones[1],
+        zone: zoneCodes[1],
         name: "Hotel 1 Calvia",
         email: "calvia1@hotel.com",
         seasons: [
@@ -181,7 +181,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
-        zone: zones[1],
+        zone: zoneCodes[1],
         name: "Hotel 2 Calvia",
         email: "calvia2@hotel.com",
         seasons: [
@@ -210,7 +210,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
-        zone: zones[0],
+        zone: zoneCodes[0],
         name: "Hotel 1 Palma de Mallorca",
         email: "palma1@hotel.com",
         seasons: [
@@ -246,7 +246,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
-        zone: zones[0],
+        zone: zoneCodes[0],
         name: "Hotel 2 Palma de Mallorca",
         email: "palma2@hotel.com",
         seasons: [
@@ -281,7 +281,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
-        zone: zones[0],
+        zone: zoneCodes[0],
         name: "Hotel 3 Palma de Mallorca",
         email: "palma3@hotel.com",
         seasons: [
@@ -317,7 +317,7 @@ const hotels: Hotel[] = [
         allInclusive: true,
     },
     {
-        zone: zones[0],
+        zone: zoneCodes[0],
         name: "Hotel 4 Palma de Mallorca",
         email: "palma2@hotel.com",
         seasons: [
@@ -353,7 +353,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
-        zone: zones[0],
+        zone: zoneCodes[0],
         name: "Hotel 5 Palma de Mallorca",
         email: "palma3@hotel.com",
         seasons: [

@@ -1,4 +1,4 @@
-import type Zone from "../types/zone";
+import { type Zone } from "#types";
 
 const zones: Zone[] = [
     {

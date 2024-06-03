@@ -1,13 +1,21 @@
 {
   "name": "project-h",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
+  },
+  "imports": {
+    "#components": "./src/components/index.ts",
+    "#utils": "./src/components/utils/index.ts",
+    "#data": "./src/data/index.ts",
+    "#hooks": "./src/hooks/index.ts",
+    "#styles": "./src/styles/index.css",
+    "#types": "./src/types/index.ts"
   },
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.2",
