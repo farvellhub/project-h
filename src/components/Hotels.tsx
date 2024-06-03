@@ -1,8 +1,16 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { nanoid } from "nanoid";
 
-import { type Icon, type Hotel } from "../types";
-import { Cover, Star } from "./utils";
+import { 
+    type Icon, 
+    type Hotel 
+} from "../types";
+
+import { 
+    Cover, 
+    Star 
+} from "./utils";
+
 import { IconCollection } from "../data";
 
 declare interface Props {
@@ -34,8 +42,7 @@ const Hotels: React.FC<Props> = ({ isVisible, hotels }): JSX.Element => {
             { isVisible && (
                 <motion.ul 
                     className={ listContainer }
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                 >
                     {

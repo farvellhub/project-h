@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { hotelsMock } from "../data";
 import { Hotel } from "../types";
 
 declare interface Search {
@@ -8,7 +7,8 @@ declare interface Search {
     hotels: Hotel[]
 }
 
-function useSearch(): Search {
+
+function useSearch(hotelsMock: Hotel[]): Search {
     const [ hotels, setHotels ] = useState( hotelsMock );
     const [ search, setSearch ] = useState( "" );
 
