@@ -2,6 +2,7 @@ import type Zone from "./zone";
 import type Season from "./season";
 
 declare interface Hotel {
+    id: string
     zone: Zone
     name: string
     email: string

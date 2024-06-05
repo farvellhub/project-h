@@ -1,8 +1,20 @@
+import { nanoid } from "nanoid";
+
 import { 
     type Hotel, 
     type Zone 
 } from "#types";
 
+
+function setId( id: string ) {
+    hotels.map(( hotel ) => {
+        hotel.id = `${ 
+            hotel.name
+                .toLowerCase()
+                .replaceAll( " ", "" )
+            }-${ id }`;
+    })
+}
 
 const zones: Zone[] = [
     {
@@ -22,6 +34,7 @@ const zones: Zone[] = [
 
 const hotels: Hotel[] = [
     {
+        id: "",
         zone: zones[2],
         name: "Hotel 1 Alcudia",
         email: "alcudia1@hotel.com",
@@ -58,6 +71,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
+        id: "",
         zone: zones[2],
         name: "Hotel 2 Alcudia",
         email: "alcudia2@hotel.com",
@@ -93,6 +107,7 @@ const hotels: Hotel[] = [
         allInclusive: true,
     },
     {
+        id: "",
         zone: zones[2],
         name: "Hotel 3 Alcudia",
         email: "alcudia3@hotel.com",
@@ -129,6 +144,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
+        id: "",
         zone: zones[2],
         name: "Hotel 4 Alcudia",
         email: "alcudia1@hotel.com",
@@ -164,6 +180,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
+        id: "",
         zone: zones[1],
         name: "Hotel 1 Calvia",
         email: "calvia1@hotel.com",
@@ -200,6 +217,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
+        id: "",
         zone: zones[1],
         name: "Hotel 2 Calvia",
         email: "calvia2@hotel.com",
@@ -229,6 +247,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
+        id: "",
         zone: zones[0],
         name: "Hotel 1 Palma de Mallorca",
         email: "palma1@hotel.com",
@@ -265,6 +284,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
+        id: "",
         zone: zones[0],
         name: "Hotel 2 Palma de Mallorca",
         email: "palma2@hotel.com",
@@ -300,6 +320,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
+        id: "",
         zone: zones[0],
         name: "Hotel 3 Palma de Mallorca",
         email: "palma3@hotel.com",
@@ -336,6 +357,7 @@ const hotels: Hotel[] = [
         allInclusive: true,
     },
     {
+        id: "",
         zone: zones[0],
         name: "Hotel 4 Palma de Mallorca",
         email: "palma2@hotel.com",
@@ -372,6 +394,7 @@ const hotels: Hotel[] = [
         allInclusive: false,
     },
     {
+        id: "",
         zone: zones[0],
         name: "Hotel 5 Palma de Mallorca",
         email: "palma3@hotel.com",
@@ -408,5 +431,7 @@ const hotels: Hotel[] = [
         allInclusive: true,
     }
 ];
+
+setId( nanoid( 5 ) );
 
 export default hotels;

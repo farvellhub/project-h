@@ -1,9 +1,9 @@
-import Hotels from "./Hotels";
+import Render from "./Render";
 import Loader from "./Loader";
 import Search from "./Search";
 
 export {
-    Hotels,
+    Render,
     Loader,
     Search
 };

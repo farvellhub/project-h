@@ -6,11 +6,12 @@ import {
     useSearch
  } from "#hooks";
 
-import { 
-    Loader, 
-    Hotels, 
-    Search 
-} from "#components";
+ import {
+    Loader,
+    Render,
+    Search
+ } from "#components";
+
 
 const container = "px-6 lg:max-w-[1224px] lg:mx-auto";
 
@@ -25,9 +26,9 @@ function App(): JSX.Element {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
             >
-                <Search 
+                <Search
                     handleSubmit={ search.handleSubmit }
-                    handleSearch={ search.handleSearch } 
+                    handleSearch={ search.handleSearch }
                 />
 
                 <motion.section
@@ -35,7 +36,7 @@ function App(): JSX.Element {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3 }}
                 >
-                    <Hotels isVisible hotels={ search.hotels } />
+                    <Render isVisible hotels={ search.hotels } />
                 </motion.section>
             </motion.main>
         ) : (
