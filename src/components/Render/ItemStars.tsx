@@ -1,5 +1,5 @@
 import { type Hotel } from "#types";
-import { Star } from "#utils";
+import { StarIcon } from "#utils";
 
 
 declare interface Props {
@@ -20,7 +20,7 @@ const ItemStars: React.FC<Props> = ({ hotel }): JSX.Element => {
         <div className={ itemStars }>
             { 
                 setStarKeys( hotel )
-                    .map(( key ) => <span key={ key }><Star /></span>) 
+                    .map(( key ) => <span key={ key }><StarIcon /></span>) 
             }
         </div>
     );

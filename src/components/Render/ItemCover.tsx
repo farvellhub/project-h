@@ -1,6 +1,5 @@
 import { type Hotel } from "#types";
-import { Cover } from "#utils";
-
+import { DefaultCover } from "#utils";
 
 declare interface Props {
     hotel: Hotel
@@ -17,7 +16,7 @@ const ItemCover: React.FC<Props> = ({ hotel, index }): JSX.Element => {
                             src={ hotel.cover }
                             alt={ `hotel-cover-${ index }` }
                         />
-                    : <Cover />
+                    : <DefaultCover />
             }
         </>
     );

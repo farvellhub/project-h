@@ -1,4 +1,4 @@
-import { IconCollection } from "#data";
+import { IconsCollection } from "#data";
 
 import { 
     type Hotel,
@@ -16,7 +16,7 @@ const ItemBadges: React.FC<Props> = ({ hotel }): JSX.Element => {
     return (
         <div className={ itemBadges }>
             {
-                IconCollection.map(({ name, icon, description }: Icon, index: number) => {
+                IconsCollection.map(({ name, icon, description }: Icon, index: number) => {
                     if ( !hotel[name] ) return;
 
                     return (

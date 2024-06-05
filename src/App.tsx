@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { hotelsMock } from "#data";
+import { HotelsMock } from "#data";
 
 import { 
     useLoaded,
@@ -17,7 +17,7 @@ const container = "px-6 lg:max-w-[1224px] lg:mx-auto";
 
 function App(): JSX.Element {
     const loaded = useLoaded();
-    const search = useSearch( hotelsMock );
+    const search = useSearch( HotelsMock );
 
     return (
         loaded ? (

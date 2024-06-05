@@ -1,4 +1,4 @@
-function Cover(): JSX.Element {
+function DefaultCover(): JSX.Element {
     return (
         <svg className="cover" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211 211">
             <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -14,4 +14,4 @@ function Cover(): JSX.Element {
     );
 }
 
-export default Cover;
+export default DefaultCover;

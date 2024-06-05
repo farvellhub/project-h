@@ -1,10 +1,12 @@
-import Cover from  "./Cover";
-import Star from "./Star";
-import * as Icons from "./Icons";
+import * as BadgeIcons from "./BadgeIcons";
+import DefaultCover from  "./DefaultCover";
+import SearchIcon from "./SearchIcon";
+import StarIcon from "./StarIcon";
 
 
 export {
-    Cover,
-    Icons,
-    Star
+    BadgeIcons,
+    DefaultCover,
+    SearchIcon,
+    StarIcon
 }

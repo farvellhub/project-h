@@ -7,7 +7,7 @@ import {
 
 
 function setId( id: string ) {
-    hotels.map(( hotel ) => {
+    HotelsMock.map(( hotel ) => {
         hotel.id = `${ 
             hotel.name
                 .toLowerCase()
@@ -32,7 +32,7 @@ const zones: Zone[] = [
 ];
 
 
-const hotels: Hotel[] = [
+const HotelsMock: Hotel[] = [
     {
         id: "",
         zone: zones[2],
@@ -434,4 +434,4 @@ const hotels: Hotel[] = [
 
 setId( nanoid( 5 ) );
 
-export default hotels;
+export default HotelsMock;

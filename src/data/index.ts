@@ -1,8 +1,8 @@
-import hotels from "./hotels";
-import icons from "./icons";
+import HotelsMock from "./HotelsMock";
+import IconsCollection from "./IconsCollection";
 
 export {
-    hotels as hotelsMock,
-    icons as IconCollection
+    HotelsMock,
+    IconsCollection
 };
 

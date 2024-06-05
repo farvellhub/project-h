@@ -1,5 +1,6 @@
-import { Icons } from "#utils";
+import { BadgeIcons as Icons } from "#utils";
 import { type Icon } from "#types";
+
 
 const icons: Icon[] = [
     {
