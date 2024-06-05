@@ -5,6 +5,7 @@ import {
     type MouseEventHandler 
 } from "react";
 
+
 declare interface Props {
     handleSearch: ChangeEventHandler<HTMLInputElement>
     handleSubmit: MouseEventHandler<HTMLButtonElement>
@@ -17,7 +18,6 @@ const searchIcon = "absolute inset-y-0 start-0 flex items-center ps-3 pointer-ev
 const searchIconSvg = "w-4 h-4 text-gray-500";
 const searchInput = "block w-full p-4 ps-10 text-sm text-gray-900 bg-gray-100 outline-none rounded-lg shadow focus:border-0";
 const searchSubmit = "absolute end-2.5 bottom-1.5 text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-4 py-2.5";
-
 
 function SearchIcon(): JSX.Element {
     return (

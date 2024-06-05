@@ -1,9 +1,9 @@
-import Render from "./Render";
 import Loader from "./Loader";
-import Search from "./Search";
+import Render from "./Render/Render";
+import Navbar from "./Navbar/Navbar";
 
 export {
-    Render,
     Loader,
-    Search
+    Navbar,
+    Render
 };

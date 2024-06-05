@@ -9,7 +9,7 @@ import {
  import {
     Loader,
     Render,
-    Search
+    Navbar
  } from "#components";
 
 
@@ -26,7 +26,7 @@ function App(): JSX.Element {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
             >
-                <Search
+                <Navbar
                     handleSubmit={ search.handleSubmit }
                     handleSearch={ search.handleSearch }
                 />
