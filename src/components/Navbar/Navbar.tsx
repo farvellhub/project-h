@@ -1,8 +1,8 @@
 import Search from "./Search";
 
-import { 
-    type ChangeEventHandler, 
-    type MouseEventHandler 
+import {
+    type ChangeEventHandler,
+    type MouseEventHandler
 } from "react";
 
 
@@ -17,15 +17,15 @@ const newButton = "button text-gray-100 bg-green-500 hover:bg-green-600 whitespa
 
 const Navbar: React.FC<Props> = ({ handleSearch, handleSubmit, handleActive }) => {
     return (
-        <header className={ navbarWrapper }>
-            <Search 
-                handleSearch={ handleSearch }
-                handleSubmit={ handleSubmit }
+        <header className={navbarWrapper}>
+            <Search
+                handleSearch={handleSearch}
+                handleSubmit={handleSubmit}
             />
 
-            <button 
-                className={ newButton }
-                onClick={ handleActive }
+            <button
+                className={newButton}
+                onClick={handleActive}
             >
                 New +
             </button>
