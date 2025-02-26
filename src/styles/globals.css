@@ -9,6 +9,9 @@
     box-sizing: content-box;
 }
 
-body { background-color: #eee; }
+body { 
+    background-color: #eee;
+    overflow-x: hidden;
+}
 
 

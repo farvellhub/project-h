@@ -1,7 +1,9 @@
-const searchIcon = "absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none";
-const searchIconSvg = "w-4 h-4 text-gray-500";
+declare interface Props {
+    searchIcon: string
+    searchIconSvg: string
+}
 
-function SearchIcon(): JSX.Element {
+const SearchIcon: React.FC<Props> = ({ searchIcon, searchIconSvg }): JSX.Element => {
     return (
         <div className={ searchIcon }>
             <svg className={ searchIconSvg } aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

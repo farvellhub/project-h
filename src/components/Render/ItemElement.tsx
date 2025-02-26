@@ -15,9 +15,9 @@ const itemWrapper = "p-4";
 const itemTitle = "mb-2 text-2xl font-bold tracking-tight text-gray-800/90";
 const itemZone = "text-xs py-0.5";
 
-const ItemList: React.FC<Props> = ({ hotel, index }): JSX.Element => {
+const ItemElement: React.FC<Props> = ({ hotel, index }): JSX.Element => {
     return (
-        <li className={ itemContainer } key={ `${ hotel.id }-item-${ index }` }>
+        <li className={ itemContainer }>
             <ItemCover hotel={ hotel } index={ index } />
 
             <section className={ itemWrapper }>
@@ -31,4 +31,4 @@ const ItemList: React.FC<Props> = ({ hotel, index }): JSX.Element => {
     );
 };
 
-export default ItemList;
+export default ItemElement;

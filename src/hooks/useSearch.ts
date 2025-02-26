@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Hotel } from "#types";
 
+
 declare interface Search {
     handleSearch: (e: React.FormEvent<HTMLInputElement>) => void
     handleSubmit: (e: React.FormEvent<HTMLButtonElement>) => void
     hotels: Hotel[]
 }
-
 
 function useSearch(hotelsMock: Hotel[]): Search {
     const [ hotels, setHotels ] = useState( hotelsMock );

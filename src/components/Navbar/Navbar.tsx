@@ -9,14 +9,27 @@ import {
 declare interface Props {
     handleSearch: ChangeEventHandler<HTMLInputElement>
     handleSubmit: MouseEventHandler<HTMLButtonElement>
+    handleActive: MouseEventHandler<HTMLButtonElement>
 }
 
-const Navbar: React.FC<Props> = ({ handleSearch, handleSubmit }) => {
+const navbarWrapper = "wrapper flex justify-end mt-3 gap-4";
+const newButton = "button text-gray-100 bg-green-500 hover:bg-green-600 whitespace-nowrap"
+
+const Navbar: React.FC<Props> = ({ handleSearch, handleSubmit, handleActive }) => {
     return (
-        <Search 
-            handleSearch={ handleSearch }
-            handleSubmit={ handleSubmit }
-        />
+        <header className={ navbarWrapper }>
+            <Search 
+                handleSearch={ handleSearch }
+                handleSubmit={ handleSubmit }
+            />
+
+            <button 
+                className={ newButton }
+                onClick={ handleActive }
+            >
+                New +
+            </button>
+        </header>
     );
 }
 
